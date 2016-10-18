@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',['as' =>'page.landing', 'uses' => 'PagesController@landing']);
 
 Auth::routes();

@@ -7,4 +7,4 @@ More detaisl to come as i make progress.
 
 ## License
 
-My site will be open-sourced so wil use the  [MIT license](http://opensource.org/licenses/MIT).
+My site will be open-sourced so will use the  [MIT license](http://opensource.org/licenses/MIT).

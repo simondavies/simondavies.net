@@ -1,11 +1,11 @@
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="cleartype" content="on">
-<title>Simon Davies</title>
-<meta name="description" content="">
+<title>{!!config('simondavies.metadata.title')!!}</title>
+<meta name="description" content="{!!config('simondavies.metadata.description')!!}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="">
-<meta name="author" content="Simon Davies">
+<meta name="keywords" content="{!!config('simondavies.metadata.keywords')!!}">
+<meta name="author" content="{!!config('simondavies.site.name')!!}">
 <meta name="_token" content="{{ csrf_token() }}" />
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
@@ -20,7 +20,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="Simon Davies">
+<meta name="apple-mobile-web-app-title" content="{!!config('simondavies.site.name')!!}">
 <link href="/imgs/icons/icon.svg" rel="mask-icon" color="red">
 <link href="/imgs/icons/apple-touch-icon.png" rel="apple-touch-icon">
 <link href="/imgs/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed">
@@ -52,16 +52,16 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="TITLE TO BE ALLOWED">
 <meta property="og:description" content="DESCRIPTION TO BE ADDED">
-<meta property="og:image" content="IMAGE TO BE CONFIRMED">
+<meta property="og:image" name="twitter:image:" content="IMAGE TO BE CONFIRMED">
 <meta property="og:image:width" content="IMAGE TO BE CONFIRMED">
 <meta property="og:image:height" content="IMAGE TO BE CONFIRMED">
 <meta property="og:url" content="PAGE URL TO BE ADDED">
-<meta property="og:site_name" content="Simon Davies">
+<meta property="og:site_name" content="{!!config('simondavies.site.name')!!}">
 <!-- twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image:alt" content="TO BE COMPLETED">
-<meta name="twitter:site" content="@simon_davies">
-<meta name="twitter:creator" content="@simon_davies">
+<meta name="twitter:site" content="{!!config('simondavies.twitter.handle')!!}">
+<meta name="twitter:creator" content="{!!config('simondavies.twitter.handle')!!}">
 <!-- google -->
 <link href="https://plus.google.com/+SimonDaviesOfCourse" rel="publisher">
 <meta itemprop="name" content="TO BE COMPLETED">

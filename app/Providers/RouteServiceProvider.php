@@ -14,7 +14,10 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers';
+     protected $site_namespace = 'App\Http\Controllers\Site';
+     protected $amp_namespace = 'App\Http\Controllers\AMP';
+     protected $admin_namespace = 'App\Http\Controllers\Admin';
+     protected $api_namespace = 'App\Http\Controllers\API';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -37,8 +40,11 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapWebRoutes();
+        $this->mapAdminRoutes();
 
+        $this->mapAMPRoutes();
+
+        $this->mapWebRoutes();
         //
     }
 
@@ -53,9 +59,44 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::group([
             'middleware' => 'web',
-            'namespace' => $this->namespace,
+            'namespace' => $this->site_namespace,
         ], function ($router) {
             require base_path('routes/web.php');
+        });
+    }
+
+    /**
+     * Define the "AMP" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapAMPRoutes()
+    {
+        Route::group([
+            'middleware' => 'web',
+            'namespace' => $this->amp_namespace,
+            'prefix'=>'amp',
+        ], function ($router) {
+            require base_path('routes/amp.php');
+        });
+    }
+    /**
+     * Define the "admin" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapAdminRoutes()
+    {
+        Route::group([
+            'middleware' => 'web',
+            'namespace' => $this->admin_namespace,
+            'prefix'=>'mgr',
+        ], function ($router) {
+            require base_path('routes/admin.php');
         });
     }
 
@@ -70,7 +111,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::group([
             'middleware' => 'api',
-            'namespace' => $this->namespace,
+            'namespace' => $this->api_namespace,
             'prefix' => 'api',
         ], function ($router) {
             require base_path('routes/api.php');

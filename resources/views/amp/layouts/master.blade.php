@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    @include('site.partials.metadata')
+    @include('amp.partials.metadata')
 </head>
 <body>
     <div>
